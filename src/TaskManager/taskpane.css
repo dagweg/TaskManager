@@ -1,0 +1,14 @@
+.task-pane {
+    background-color: rgb(209, 209, 209);
+    width: 300px;
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+}

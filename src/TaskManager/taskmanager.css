@@ -4,6 +4,10 @@ body {
     align-items: center;
 }
 
+* {
+    font-family: Chakra Petch;
+}
+
 :root {
     --clr-blue: rgb(101, 101, 255);
     --clr-blue-active: rgba(101, 101, 255, 0.26);
@@ -12,7 +16,6 @@ body {
 
 
 .parent {
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
