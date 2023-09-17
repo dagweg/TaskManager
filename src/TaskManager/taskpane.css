@@ -1,14 +1,116 @@
+:root {
+    --btn-wid: 100px;
+    --btn-hei: 40px;
+    --clr-btn-green: #2ECC71;
+    --clr-blue: rgb(101, 101, 255);
+    --clr-blue-active: rgba(101, 101, 255, 0.26);
+    --footer-hei: 20vh;
+    --txt-wid: 220px;
+}
+
 .task-pane {
-    background-color: rgb(209, 209, 209);
-    width: 300px;
+    background-color: #;
+    width: 350px;
     height: fit-content;
-    padding: 1rem;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
+    box-shadow: 0 5px 3px #2223;
+    margin: 10px;
+    transition: 200ms ease-in-out all;
+    scale: 1;
+}
+
+[type='text'] {
+    width: var(--txt-wid);
+    height: 30px;
+    padding: 0 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-style: none;
+    border-radius: 3px;
+}
+
+[type='text']:focus {
+    outline: none;
+    box-shadow: 0 5px 10px #2222221c;
 }
 
 h2 {
     text-align: center;
+}
+
+.subtasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2px 0;
+}
+
+.sub-task {
+    /* background-color: rebeccapurple; */
+    /* padding: 1rem; */
+    width: fit-content;
+}
+
+.sub-task i {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(0, 70%);
+    background-image: url(../assets/x.svg);
+    background-size: cover;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.sub-task i:hover {
+    scale: 1.05;
+    background-color: #fafafa;
+    border-radius: 2px;
+}
+
+.sub-task i:active {
+    scale: 1;
+}
+
+.add-subtask {
+    width: 25px;
+    height: 25px;
+    margin: 2px 0;
+    background-image: url('../assets/plus-circle.svg');
+    background-size: cover;
+    background-position: center;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.add-subtask:hover {
+    scale: 1.1;
+}
+
+.add-subtask:active {
+    scale: 1;
+}
+
+.btn-finish {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+
+.btn-finish button {
+    width: var(--btn-wid);
+    height: var(--btn-hei);
+    color: #eee;
+    font-size: 16px;
+    border: none;
+    background-color: var(--clr-blue);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+    margin: 5px;
 }

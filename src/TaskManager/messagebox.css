@@ -1,0 +1,54 @@
+:root {
+    --clr-blue: rgb(101, 101, 255);
+    --clr-blue-dim: rgb(108, 108, 253);
+    --clr-blue-active: rgba(101, 101, 255, 0.26);
+    --footer-hei: 20vh;
+    --btn-hei: 40px;
+}
+
+.message-box {
+    background-color: #f0f0f0;
+    width: 500px;
+    height: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    padding: 10px 30px;
+    border: solid;
+    border-radius: 3px;
+    border-color: var(--clr-blue-dim);
+    border-width: 2px 0 0 0;
+    /* box-shadow: 0px -3px 1px 0px var(--clr-blue-dim); */
+}
+
+#content {
+    padding: 1rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.btn-abs {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    /* background-color: rebeccapurple; */
+    justify-content: right;
+    padding: 1rem;
+}
+
+.btn-abs button {
+    width: var(--btn-wid);
+    height: var(--btn-hei);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    background-color: var(--clr-blue);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+    margin: 5px;
+}
