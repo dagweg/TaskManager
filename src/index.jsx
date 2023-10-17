@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import TaskManager from './TaskManager/taskmanager';
+// import ProductList from './FullstackReactBook/Component/ProductList';
+import TaskManager from './components/taskmanager';
 
 function Index() {
-
   return (
-    <>
-      <TaskManager />
-    </>
+    <TaskManager />
   )
 }
 
