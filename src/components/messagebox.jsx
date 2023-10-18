@@ -11,13 +11,14 @@ export default function MessageBox({ message, isMsgOpen, setIsMsgOpen }) {
     return isMsgOpen && (
         <div className='message-box'>
             <div id='title'>
-                <h1>Message</h1>
-                <hr />
+                <i className='fa-solid fa-triangle-exclamation'></i>
+                {/* <hr /> */}
             </div>
-            <div id='content'>{message}</div>
+            <div id='content'>
+                <p>{message}</p>
+            </div>
             <div className='btn-abs'>
                 <button onClick={closeMessageBox}>Ok</button>
-
             </div>
         </div>
     );

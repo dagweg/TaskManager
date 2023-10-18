@@ -9,8 +9,6 @@
 }
 
 .task-pane {
-    /* background-color: #e7e0139a; */
-    /* background: linear-gradient(0deg, , #1f3); */
     width: 350px;
     height: fit-content;
     padding: 10px;
@@ -142,4 +140,13 @@ h2 {
 
 .close-button-pane:active {
     scale: 1.05;
+}
+
+.task-pane.saved {}
+
+.task-pane.saved input,
+.task-pane.saved .btn-finish,
+.task-pane.saved i.close-subtask,
+.task-pane.saved i.add-subtask {
+    display: none;
 }

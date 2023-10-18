@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import TaskManager from './TaskManager/taskmanager';
+import TaskManager from './components/taskmanager';
 
-function Index(){
-  return(
+function Index() {
+  return (
     <>
-      <TaskManager/>
+      <TaskManager />
     </>
   )
 }
 
 
-ReactDOM.render(<Index/>, document.getElementById('root'))
+ReactDOM.render(<Index />, document.getElementById('root'))
