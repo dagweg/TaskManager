@@ -1,10 +1,4 @@
-:root {
-    --clr-blue: rgb(101, 101, 255);
-    --clr-blue-dim: rgb(108, 108, 253);
-    --clr-blue-active: rgba(101, 101, 255, 0.26);
-    --footer-hei: 20vh;
-    --btn-hei: 40px;
-}
+@import "./variables.css";
 
 .message-box {
     background-color: #f0f0f0;

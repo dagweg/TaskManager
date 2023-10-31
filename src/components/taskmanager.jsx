@@ -5,11 +5,19 @@ import TaskPane from "./taskpane";
 import MessageBox from "./messagebox";
 import SSIDGenerator from "../util/SSIDGenerator";
 
+
+
 export default function TaskManager() {
+
+  const themeMods = {
+    sun: 'fa-regular fa-sun',
+    moon: 'fa-solid fa-moon'
+  }
 
   const [taskPane, setTaskPane] = useState([])
   const [message, setMessage] = useState(false)
   const [isMsgOpen, setIsMsgOpen] = useState(false)
+  const [themeMode, setThemeMode] = useState(themeMods.moon)
 
 
   function onClose(paneKey) {
@@ -48,12 +56,21 @@ export default function TaskManager() {
   };
 
 
+  const changeThemeMode = () => {
+    if (themeMode === themeMods.moon) {
+      setThemeMode(themeMods.sun)
+    } else {
+      setThemeMode(themeMods.moon)
+    }
+  }
+
   return (
     <>
       <div className="parent">
+        <div className={`absolute left-0 top-0 m-2 text-3xl hover:bg-gray-200 active:bg-transparent w-10 h-10 text-center rounded-xl ease-in-out duration-150 cursor-pointer ${themeMode}`} onClick={changeThemeMode}></div>
         <div>
           <div className="title-panel">
-            <h1>TMCA <span style={{ fontSize: 16 }}>Community Edition</span></h1>
+            <h1 className="text-5xl font-black font-sans tracking-wide">TaskIt<span style={{ fontSize: 16 }} className="font-black absolute top-6">PRO</span></h1>
             {isMsgOpen && <MessageBox message={message} isMsgOpen={isMsgOpen} setIsMsgOpen={setIsMsgOpen} />}
           </div>
           <div className="main-panel">
@@ -74,7 +91,7 @@ export default function TaskManager() {
           </div>
         </div>
         <Footer />
-      </div>
+      </div >
     </>
   );
 }

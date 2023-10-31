@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import SSIDGenerator from '../util/SSIDGenerator'
 import MessageBox from './messagebox';
 import '../css/taskpane.css'
+import TextBox from './textbox';
 
 export default function TaskPane({ paneKey, onClose }) {
 
@@ -77,9 +78,17 @@ export default function TaskPane({ paneKey, onClose }) {
             <MessageBox message={message} isMsgOpen={isMsgOpen} setIsMsgOpen={setIsMsgOpen} />
             <div className='task-pane' paneKey={paneKey}>
                 <div>
-                    <h2>Task title</h2>
+                    {/* <h2>Task title</h2> */}
+
                     <button className='close-button-pane' onClick={() => onClose(paneKey)}>Close</button>
-                    <input type='text' ref={titleText}></input>
+                    {/* <div className='task-pane-input'>
+                        <input type='text' ref={titleText} required></input>
+                        <i className='input-label'>Task Title</i>
+                        <div className='input-back'></div>
+                    </div> */}
+
+                    <TextBox reference={titleText} placeholder={"Task Title"} />
+
                 </div>
                 <div className='subtasks'>
                     <h3>Subtasks</h3>
@@ -91,10 +100,13 @@ export default function TaskPane({ paneKey, onClose }) {
                                 {
                                     t.isEditing ?
                                         (
-                                            <>
-                                                <input type='text' value={t.content} onChange={e => handleSubtaskInput(e.target.value, t.key)}></input>
-                                                <i id='close-subtask' className='fa-solid fa-close' onClick={() => closeSubTask(t.key)}></i>
-                                            </>
+                                            // <>
+                                            //     <input type='text' value={t.content} onChange={e => handleSubtaskInput(e.target.value, t.key)}></input>
+                                            //     <i id='close-subtask' className='fa-solid fa-close' onClick={() => closeSubTask(t.key)}></i>
+                                            // </>
+                                            <div className='relative flex align-middle'>
+                                                <TextBox placeholder={"Subtask"} value={t.content} onChange={e => handleSubtaskInput(e.target.value, t.key)} closeSubTask={() => closeSubTask(t.key)} subTaskKey={t.key} closable={true} />
+                                            </div>
                                         ) :
                                         (
                                             <p>{t.content}</p>
@@ -103,11 +115,9 @@ export default function TaskPane({ paneKey, onClose }) {
                             </li>
                         ))}
                     </ol>
-                    {hasOpenSubtasks && (
-                        <div className='btn-finish'>
-                            <button onClick={() => finishButtonValidation(paneKey, titleText)}>Finish</button>
-                        </div>
-                    )}
+                    <div className='btn-finish'>
+                        <button onClick={() => finishButtonValidation(paneKey, titleText)}>Finish</button>
+                    </div>
                 </div>
             </div>
         </>

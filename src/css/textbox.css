@@ -1,0 +1,46 @@
+@import "./variables.css";
+
+.task-pane-input{
+    position: relative;
+    margin: 10px 0;
+    /* background-color: blue; */
+}
+
+.task-pane-input .input-label{
+    position: absolute;
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: red; */
+    /* top:0; */
+    bottom: 0;
+    left: 5px;
+    transition: 150ms ease-in-out;
+}
+
+.task-pane-input input:focus~.input-label,
+.task-pane-input input:valid~.input-label{
+    transform: translate(0,-25px);
+    font-size: small;
+}
+.task-pane-input input:focus~.input-back,
+.task-pane-input input:valid~.input-back{
+    transform: scaleY(1);
+}
+
+.input-back{
+    position: absolute;
+    background-color: #2221;
+    /* border: solid; */
+    width: 100%;
+    height: var(--txt-hei);
+    z-index: 0;
+    left:0;
+    top:0;
+    border-radius: 3px 3px 0 0;
+    transition: 150ms ease-in-out;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}

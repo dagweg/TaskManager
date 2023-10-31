@@ -1,0 +1,10 @@
+:root {
+    --btn-wid: 100px;
+    --btn-hei: 40px;
+    --clr-btn-green: #2ECC71;
+    --clr-blue: rgb(101, 101, 255);
+    --clr-blue-active: rgba(101, 101, 255, 0.26);
+    --footer-hei: 20vh;
+    --txt-wid: 220px;
+    --txt-hei: 30px;
+}

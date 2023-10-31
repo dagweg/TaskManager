@@ -1,46 +1,43 @@
-:root {
-    --btn-wid: 100px;
-    --btn-hei: 40px;
-    --clr-btn-green: #2ECC71;
-    --clr-blue: rgb(101, 101, 255);
-    --clr-blue-active: rgba(101, 101, 255, 0.26);
-    --footer-hei: 20vh;
-    --txt-wid: 220px;
-}
+@import "./variables.css";
 
 .task-pane {
     width: 350px;
     height: fit-content;
-    padding: 10px;
+    padding: 30px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 1px;
-    box-shadow: 0 5px 3px #2223;
+    box-shadow: 0 10px 20px #2223;
     margin: 10px;
     transition: 200ms ease-in-out all;
-    outline: solid;
+    /* outline: solid; */
     outline-width: 1px;
     scale: 1;
 }
 
 [type='text'] {
+    position: relative;
+    outline: none;
     width: var(--txt-wid);
-    height: 30px;
+    height: var(--txt-hei);
     padding: 0 5px;
     font-size: 16px;
-    margin: 10px 0;
-    border-style: none;
-    border-radius: 3px;
-    box-shadow: 0px 0px 1px 1px #2224;
+    /* margin: 10px 0; */
+    border-style: solid;
+    border-radius: 0px;
+    border-width: 0 0 2px 0;
+    z-index: 10;
+    background-color: transparent;
+    /* box-shadow: 0px 0px 1px 1px #2224; */
     /* outline: solid;
     outline-width: 1px; */
 }
 
 [type='text']:focus {
     border-color: var(--clr-blue);
-    outline-color: rgba(101, 101, 255, 0.555);
-    box-shadow: 0 5px 10px #2222221c;
+    /* outline-color: rgba(101, 101, 255, 0.555); */
+    /* box-shadow: 0 5px 10px #2222221c; */
 }
 
 h2 {
@@ -61,7 +58,7 @@ h2 {
     width: fit-content;
 }
 
-.sub-task i {
+/* .sub-task i {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -69,7 +66,7 @@ h2 {
     background-size: cover;
     margin: 0 5px;
     cursor: pointer;
-}
+} */
 
 .sub-task i:hover {
     scale: 1.05;
@@ -108,14 +105,21 @@ h2 {
 .btn-finish button {
     width: var(--btn-wid);
     height: var(--btn-hei);
-    color: #eee;
+    color: #333;
     font-size: 16px;
-    border: none;
-    background-color: var(--clr-blue);
+    background-color: transparent;
     cursor: pointer;
     font-weight: bold;
+    border: solid;
     border-radius: 2px;
+    border-width: 2px;
+    border-color: var(--clr-blue);
     margin: 5px;
+}
+
+.btn-finish button:hover {
+    background-color: var(--clr-blue);
+    color: white;
 }
 
 .close-button-pane {
@@ -142,11 +146,5 @@ h2 {
     scale: 1.05;
 }
 
-.task-pane.saved {}
 
-.task-pane.saved input,
-.task-pane.saved .btn-finish,
-.task-pane.saved i.close-subtask,
-.task-pane.saved i.add-subtask {
-    display: none;
-}
+
